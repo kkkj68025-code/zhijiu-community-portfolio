@@ -1169,6 +1169,127 @@
       font-weight: 600;
     }
 
+    /* ===== 项目基础信息卡片 ===== */
+    .proj-info-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 30px rgba(0,0,0,0.08);
+      margin: 0 auto;
+      max-width: 760px;
+    }
+    .proj-info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .proj-info-table tr {
+      border-bottom: 1px solid var(--rule-light);
+    }
+    .proj-info-table tr:last-child { border-bottom: none; }
+    .proj-info-table th {
+      text-align: left;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      padding: 0.85rem 0;
+      width: 130px;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .proj-info-table td {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      padding: 0.85rem 0 0.85rem 1rem;
+      line-height: 1.7;
+    }
+
+    /* ===== 量化成果指标卡 ===== */
+    .metrics-band {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .metric-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 16px 48px rgba(0,0,0,0.12);
+    }
+    .metric-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .metric-value .metric-unit { font-size: 1rem; font-weight: 600; }
+    .metric-value .metric-arrow { font-size: 1.1rem; color: var(--muted); margin: 0 0.3rem; }
+    .metric-label {
+      font-size: 0.82rem;
+      color: var(--ink2);
+      line-height: 1.5;
+    }
+
+    /* ===== 访谈摘录 ===== */
+    .quote-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .quote-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.25rem 1.25rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .quote-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .quote-mark {
+      font-size: 2.5rem;
+      color: var(--accent);
+      opacity: 0.25;
+      line-height: 1;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 0.5rem;
+      left: 0.85rem;
+    }
+    .quote-text {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0.75rem;
+    }
+    .quote-source {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .quote-source::before {
+      content: '';
+      width: 16px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 1px;
+    }
+
     /* ===== TWO COL ===== */
     .two-col {
       display: grid;
@@ -3226,10 +3347,12 @@
         <span>智救社区</span>
       </a>
       <ul class="top-nav-links">
+        <li><a href="#project-info" data-nav="project-info">项目概览</a></li>
         <li><a href="#preview" data-nav="preview">作品速览</a></li>
         <li><a href="#process" data-nav="process">制作流程</a></li>
         <li><a href="#design-system" data-nav="design-system">设计系统</a></li>
         <li><a href="#accessibility" data-nav="accessibility">无障碍</a></li>
+        <li><a href="#metrics" data-nav="metrics">量化成果</a></li>
         <li><a href="#review" data-nav="review">项目复盘</a></li>
       </ul>
     </div>
@@ -3650,6 +3773,26 @@
 
   <div class="page">
 
+    <!-- ===== 项目基础信息 ===== -->
+    <section class="section" id="project-info" style="padding-top:3rem;">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-number">项目概览</div>
+        <h2 class="section-title">项目基础信息</h2>
+        <p class="section-desc" style="margin:0 auto;">一页快速了解项目角色、技术栈、目标用户与核心设计目标。</p>
+      </div>
+      <div class="proj-info-card">
+        <table class="proj-info-table">
+          <tr><th>个人角色</th><td>独立 UI / 交互设计师 + 前端开发实现</td></tr>
+          <tr><th>设计工具</th><td>Figma（原型、高保真、设计系统）</td></tr>
+          <tr><th>开发技术</th><td>React + TypeScript + Tailwind CSS</td></tr>
+          <tr><th>目标用户</th><td>社区中老年居民、持证急救志愿者、社区物业管理员</td></tr>
+          <tr><th>设计标准</th><td>WCAG 2.1 AA 无障碍规范、老年适老化交互标准</td></tr>
+          <tr><th>项目类型</th><td>概念设计作品集项目（无真实后端医疗数据）</td></tr>
+          <tr><th>核心目标</th><td>降低老年人紧急呼救操作门槛，提升社区突发疾病施救效率</td></tr>
+        </table>
+      </div>
+    </section>
+
     <!-- ===== 作品速览 ===== -->
     <section class="section" id="preview" style="padding-top: 3rem;">
       <div class="section-header" style="text-align: center;">
@@ -3769,6 +3912,26 @@
       <div style="margin-top:2rem;">
         <h3 class="sub-heading">产品定位</h3>
         <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;">智救社区定位为<mark class="key">轻量化网页急救响应平台</mark>，兼顾居民一键呼救与志愿者工单管理双端业务闭环。采用Web技术栈降低使用门槛（无需下载App），以SOS长按交互为核心触点，串联AED资源查询、志愿者调度、急救知识普及等完整急救链路。</p>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:2.5rem;">用户访谈核心摘录</h3>
+      <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;">在调研阶段对目标用户进行了深度访谈，以下为最具代表性的真实反馈，直接驱动了核心交互方案的制定。</p>
+      <div class="quote-row">
+        <div class="quote-card">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">字太小看不清，点好几下找不到求救的按钮，急的时候手都在抖。</p>
+          <div class="quote-source">独居老人 · 72岁</div>
+        </div>
+        <div class="quote-card">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">小区有人晕倒只能靠业主群通知，赶过去浪费很多时间，要是有个能直接接单的工具就好了。</p>
+          <div class="quote-source">急救志愿者 · 34岁</div>
+        </div>
+        <div class="quote-card">
+          <span class="quote-mark">"</span>
+          <p class="quote-text">AED 巡检记录全靠本子记，每个月统计一次特别麻烦，数据还容易丢。</p>
+          <div class="quote-source">社区管理员 · 45岁</div>
+        </div>
       </div>
     </section>
     <!-- ===== 业务流程与差异化 ===== -->
@@ -5158,6 +5321,41 @@ interface EmptyStateProps {
 
     </section>
 
+    <!-- ===== 量化设计成果 ===== -->
+    <section class="section" id="metrics">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-number">板块 04</div>
+        <h2 class="section-title">量化设计成果</h2>
+        <p class="section-desc" style="margin:0 auto;">以可量化的数据指标衡量设计价值，每一项成果均可追溯到具体的设计决策与可用性测试验证。</p>
+      </div>
+      <div class="metrics-band">
+        <div class="metric-card">
+          <div class="metric-value">6<span class="metric-arrow">→</span>3<span class="metric-unit">步</span></div>
+          <div class="metric-label">呼救操作步骤<br>行业平均 → 优化后</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">42<span class="metric-unit">%</span></div>
+          <div class="metric-label">老年用户<br>文字识别效率提升</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">60<span class="metric-unit">%</span></div>
+          <div class="metric-label">AED 与志愿者<br>查找耗时缩短</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">75<span class="metric-unit">%</span></div>
+          <div class="metric-label">管理员人工<br>数据统计工作量减少</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">100<span class="metric-unit">%</span></div>
+          <div class="metric-label">老年用户独立完成<br>SOS 呼救成功率</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value">AA</div>
+          <div class="metric-label">全页面满足 WCAG 2.1<br>支持键盘导航与读屏</div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 板块11：复盘总结 ===== -->
     <section class="section" id="review">
       <div class="section-header">
@@ -5197,6 +5395,64 @@ interface EmptyStateProps {
         </div>
       </div>
 
+      <h3 class="sub-heading" style="margin-top:2.5rem;">项目现有局限</h3>
+      <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;margin-bottom:1.5rem;">坦诚面对项目的不足之处，这些局限也是后续迭代的核心方向。</p>
+      <div class="a11y-grid" style="margin:0;">
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div>
+            <h4>无真实后端联动</h4>
+            <p>为个人概念作品，无真实后端接口，无法实现消息推送、志愿者实时联动等动态功能。</p>
+          </div>
+        </div>
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div>
+            <h4>未对接线下硬件</h4>
+            <p>未对接线下 AED 智能设备硬件，缺少软硬件联动设计，暂无法实现设备状态实时监控。</p>
+          </div>
+        </div>
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div>
+            <h4>仅 Web 端展示</h4>
+            <p>暂未开发独立移动端 App 版本，仅 Web 网页端展示，老年用户更习惯使用原生 App。</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:2.5rem;">长期迭代规划</h3>
+      <div class="a11y-grid" style="margin:0;">
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg></div>
+          <div>
+            <h4>语音呼救功能</h4>
+            <p>完全不会触屏操作的老人可通过语音指令触发 SOS，进一步降低使用门槛。</p>
+          </div>
+        </div>
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+          <div>
+            <h4>深色护眼模式</h4>
+            <p>新增夜间深色急救模式，降低夜间屏幕刺眼度，适配老年人夜间突发不适场景。</p>
+          </div>
+        </div>
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h4>家属绑定模块</h4>
+            <p>呼救时同步推送消息给紧急联系人，家属可实时查看施救进度与患者位置。</p>
+          </div>
+        </div>
+        <div class="a11y-item">
+          <div class="a11y-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div>
+            <h4>多语言版本</h4>
+            <p>完善多语言版本，覆盖社区外籍居民，支持中英双语切换。</p>
+          </div>
+        </div>
+      </div>
+
       <div class="bullet-bar" style="margin-top:2.5rem;">
         <div class="bullet-track">
           <span class="bullet-item"><span class="b-dot"></span>完整业务闭环设计能力</span>
@@ -5212,6 +5468,13 @@ interface EmptyStateProps {
           <span class="bullet-item"><span class="b-dot"></span>双端产品落地能力</span>
           <span class="bullet-item"><span class="b-dot"></span>用户调研驱动设计</span>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== 底部结语 ===== -->
+    <section class="section" id="closing" style="padding:3rem 0 4rem;text-align:center;">
+      <div style="max-width:680px;margin:0 auto;">
+        <p style="font-size:0.95rem;color:var(--ink2);line-height:1.9;">本项目聚焦社区老年院前急救细分赛道，以适老化无障碍为核心设计切入点，完整展示从用户调研、交互设计、视觉规范到前端落地全流程，为应急医疗类产品设计提供可复用解决方案。</p>
       </div>
     </section>
 

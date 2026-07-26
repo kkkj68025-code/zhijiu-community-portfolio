@@ -2761,7 +2761,7 @@
       line-height: 1.9;
     }
 
-    /* ===== 制作流程 Tab 导航 ===== */
+    /* ===== 制作流程 侧边导航 ===== */
     .process-section {
       padding: 5rem 0;
       border-top: 1px solid var(--rule-light);
@@ -2772,29 +2772,46 @@
       margin-bottom: 2.5rem;
     }
 
-    .process-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-      padding: 0.5rem;
-      background: rgba(255,255,255,0.92);
-      border-radius: var(--radius-xl);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+    .process-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .process-sidebar {
       position: sticky;
-      top: 64px;
-      z-index: 100;
+      top: 90px;
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.04);
+      padding: 0.75rem;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .process-sidebar-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      padding: 0.5rem 0.75rem 0.75rem;
+      border-bottom: 1px solid var(--rule-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-tabs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
     }
 
     .process-tab {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
-      padding: 0.6rem 1rem;
+      gap: 0.5rem;
+      padding: 0.7rem 0.85rem;
       border-radius: var(--radius-md);
       font-size: 0.85rem;
       font-weight: 500;
@@ -2804,12 +2821,29 @@
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
       white-space: nowrap;
+      text-align: left;
+      width: 100%;
+      position: relative;
+    }
+
+    .process-tab .tab-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg2);
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 700;
       flex-shrink: 0;
+      transition: all 0.3s ease;
     }
 
     .process-tab:hover {
       color: var(--ink2);
-      background: rgba(255,255,255,0.8);
+      background: rgba(232,54,93,0.04);
     }
 
     .process-tab.active {
@@ -2818,12 +2852,29 @@
       box-shadow: 0 2px 8px rgba(232,54,93,0.12), 0 1px 3px rgba(0,0,0,0.04);
     }
 
+    .process-tab.active .tab-num {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .process-tab.active::before {
+      content: '';
+      position: absolute;
+      left: -0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 60%;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
     .tab-divider {
-      width: 1px;
-      height: 16px;
-      background: var(--rule);
-      flex-shrink: 0;
-      margin: 0 0.15rem;
+      display: none;
+    }
+
+    .process-content {
+      min-width: 0;
     }
 
     .process-panel {
@@ -2849,20 +2900,36 @@
     }
 
     @media (max-width: 768px) {
-      .process-tabs {
-        gap: 0.35rem;
-        padding: 0.4rem;
-        border-radius: var(--radius-lg);
+      .process-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .process-sidebar {
         position: static;
+        padding: 0.5rem;
+      }
+      .process-sidebar-title {
+        display: none;
+      }
+      .process-tabs {
+        flex-direction: row;
+        gap: 0.3rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.25rem;
       }
       .process-tab {
-        padding: 0.5rem 0.7rem;
+        padding: 0.5rem 0.75rem;
         font-size: 0.78rem;
+        white-space: nowrap;
       }
       .process-tab .tab-num {
         width: 20px;
         height: 20px;
         font-size: 0.65rem;
+      }
+      .process-tab.active::before {
+        display: none;
       }
     }
 
@@ -3930,24 +3997,24 @@
       <div class="section-header">
         <div class="section-number">板块 01</div>
         <h2 class="section-title">制作流程</h2>
-        <p class="section-desc" style="margin:0 auto;">从问题定义到设计决策，完整展示UI设计思维链条。点击下方导航按钮快速跳转各环节。</p>
+        <p class="section-desc" style="margin:0 auto;">从问题定义到设计决策，完整展示UI设计思维链条。点击左侧导航切换各环节。</p>
       </div>
 
-      <div class="process-tabs" id="processTabs">
-        <button class="process-tab active" data-panel="processPanel0" onclick="switchProcess('processPanel0')">项目调研</button>
-        <span class="tab-divider"></span>
-        <button class="process-tab" data-panel="processPanel1" onclick="switchProcess('processPanel1')">问题定义</button>
-        <span class="tab-divider"></span>
-        <button class="process-tab" data-panel="processPanel6" onclick="switchProcess('processPanel6')">设计决策</button>
-        <span class="tab-divider"></span>
-        <button class="process-tab" data-panel="processPanel2" onclick="switchProcess('processPanel2')">信息架构</button>
-        <span class="tab-divider"></span>
-        <button class="process-tab" data-panel="processPanel3" onclick="switchProcess('processPanel3')">开始制作</button>
-        <span class="tab-divider"></span>
-        <button class="process-tab" data-panel="processPanel4" onclick="switchProcess('processPanel4')">案例原型</button>
-        <span class="tab-divider"></span>
-        <button class="process-tab" data-panel="processPanel5" onclick="switchProcess('processPanel5')">可用性测试</button>
-      </div>
+      <div class="process-layout">
+        <aside class="process-sidebar">
+          <div class="process-sidebar-title">制作流程导航</div>
+          <div class="process-tabs" id="processTabs">
+            <button class="process-tab active" data-panel="processPanel0" onclick="switchProcess('processPanel0')"><span class="tab-num">1</span>项目调研</button>
+            <button class="process-tab" data-panel="processPanel1" onclick="switchProcess('processPanel1')"><span class="tab-num">2</span>问题定义</button>
+            <button class="process-tab" data-panel="processPanel6" onclick="switchProcess('processPanel6')"><span class="tab-num">3</span>设计决策</button>
+            <button class="process-tab" data-panel="processPanel2" onclick="switchProcess('processPanel2')"><span class="tab-num">4</span>信息架构</button>
+            <button class="process-tab" data-panel="processPanel3" onclick="switchProcess('processPanel3')"><span class="tab-num">5</span>开始制作</button>
+            <button class="process-tab" data-panel="processPanel4" onclick="switchProcess('processPanel4')"><span class="tab-num">6</span>案例原型</button>
+            <button class="process-tab" data-panel="processPanel5" onclick="switchProcess('processPanel5')"><span class="tab-num">7</span>可用性测试</button>
+          </div>
+        </aside>
+
+        <div class="process-content">
 
 <!-- Panel 1: 项目调研 -->
       <div class="process-panel active" id="processPanel0">
@@ -4814,6 +4881,9 @@
 
     </section>
       </div>
+
+        </div><!-- /process-content -->
+      </div><!-- /process-layout -->
 
     </section>
 

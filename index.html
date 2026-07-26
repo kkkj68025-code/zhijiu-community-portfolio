@@ -5066,14 +5066,92 @@ interface EmptyStateProps {
           </div>
         </div>
         <div>
-          <div class="img-showcase">
-            <img src="assets/illustration-accessibility.jpg" alt="无障碍适老化设计插画">
+          <div class="img-showcase" style="display:flex;align-items:center;justify-content:center;padding:2.5rem 1.5rem;background:linear-gradient(180deg, #FFFFFF 0%, #FFF8F9 100%);">
+            <svg viewBox="0 0 400 340" style="width:100%;max-width:340px;height:auto;" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <style>
+                  .a11y-line { fill: none; stroke: #e8365d; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+                  .a11y-fill { fill: #fce8ec; stroke: #e8365d; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+                  .a11y-soft { fill: none; stroke: #f4a8b8; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+                  .a11y-dot { fill: #e8365d; }
+                </style>
+              </defs>
+
+              <!-- 中心：人物轮廓（老年人） -->
+              <circle class="a11y-line" cx="200" cy="78" r="22"/>
+              <!-- 老花镜 -->
+              <circle class="a11y-soft" cx="192" cy="78" r="9"/>
+              <circle class="a11y-soft" cx="210" cy="78" r="9"/>
+              <line class="a11y-soft" x1="201" y1="78" x2="201" y2="78"/>
+              <path class="a11y-soft" d="M183 76 Q178 72 174 76"/>
+              <path class="a11y-soft" d="M219 76 Q224 72 228 76"/>
+              <!-- 微笑 -->
+              <path class="a11y-line" d="M192 86 Q200 92 208 86"/>
+
+              <!-- 身体 -->
+              <path class="a11y-line" d="M168 120 Q200 108 232 120 L228 195 Q200 205 172 195 Z"/>
+              <!-- 手臂左 - 持手机 -->
+              <path class="a11y-line" d="M172 130 L150 165 L158 175"/>
+              <!-- 手臂右 -->
+              <path class="a11y-line" d="M228 130 L245 160"/>
+
+              <!-- 手机 -->
+              <rect class="a11y-fill" x="138" y="158" width="26" height="42" rx="4"/>
+              <line class="a11y-line" x1="144" y1="168" x2="158" y2="168"/>
+              <line class="a11y-line" x1="144" y1="175" x2="155" y2="175"/>
+              <line class="a11y-line" x1="144" y1="182" x2="158" y2="182"/>
+              <circle class="a11y-dot" cx="151" cy="193" r="1.5"/>
+
+              <!-- 放大镜（悬于手机上方） -->
+              <circle class="a11y-line" cx="118" cy="148" r="13"/>
+              <line class="a11y-line" x1="128" y1="158" x2="136" y2="166"/>
+              <line class="a11y-line" x1="112" y1="145" x2="124" y2="145"/>
+              <line class="a11y-line" x1="118" y1="139" x2="118" y2="151"/>
+
+              <!-- 左上：眼睛（对比度） -->
+              <g transform="translate(60, 50)">
+                <path class="a11y-line" d="M0 14 Q14 2 28 14 Q14 26 0 14 Z"/>
+                <circle class="a11y-fill" cx="14" cy="14" r="5"/>
+                <circle class="a11y-dot" cx="14" cy="14" r="2"/>
+              </g>
+              <line class="a11y-soft" d="M88 70 Q120 90 150 120"/>
+
+              <!-- 右上：手指触控（大控件） -->
+              <g transform="translate(305, 45)">
+                <rect class="a11y-line" x="0" y="0" width="38" height="38" rx="8"/>
+                <path class="a11y-line" d="M19 28 L19 14 Q19 10 22 10 Q25 10 25 14 L25 22 Q25 26 28 26 L31 26 L31 16 Q31 8 24 5 Q17 2 12 8 Q8 13 9 20 L9 32 Q9 38 15 38 L28 38"/>
+              </g>
+              <line class="a11y-soft" d="M305 85 Q270 100 240 120"/>
+
+              <!-- 左下：耳朵（听觉辅助） -->
+              <g transform="translate(55, 230)">
+                <path class="a11y-line" d="M6 18 Q0 18 0 12 Q0 4 8 2 Q16 0 22 6 Q28 12 26 20 Q24 28 18 30 L14 30"/>
+                <path class="a11y-soft" d="M14 24 Q10 24 10 20"/>
+                <path class="a11y-soft" d="M30 8 Q35 6 38 2"/>
+                <path class="a11y-soft" d="M32 16 Q38 16 42 14"/>
+                <path class="a11y-soft" d="M30 24 Q36 26 40 30"/>
+              </g>
+              <line class="a11y-soft" d="M85 250 Q130 230 168 210"/>
+
+              <!-- 右下：Aa 字体缩放 -->
+              <g transform="translate(305, 230)">
+                <path class="a11y-line" d="M4 32 L14 4 L24 32"/>
+                <line class="a11y-line" x1="8" y1="22" x2="20" y2="22"/>
+                <path class="a11y-line" d="M28 32 L34 14 L40 32"/>
+                <line class="a11y-line" x1="30" y1="26" x2="38" y2="26"/>
+                <path class="a11y-soft" d="M22 2 L26 0"/>
+                <path class="a11y-soft" d="M40 8 L46 4"/>
+              </g>
+              <line class="a11y-soft" d="M305 260 Q270 240 240 215"/>
+
+              <!-- 底部连接弧线 -->
+              <path class="a11y-soft" d="M100 300 Q200 325 300 300" opacity="0.6"/>
+
+              <!-- 底部小心形点缀 -->
+              <path class="a11y-line" d="M195 312 C 191 308, 189 306, 189 304 C 189 302, 191 301, 193 301 C 194 301, 194.5 301.5, 195 302 C 195.5 301.5, 196 301, 197 301 C 199 301, 201 302, 201 304 C 201 306, 199 308, 195 312 Z" transform="translate(-8, 0) scale(1.1)"/>
+            </svg>
           </div>
-          <p class="img-caption">面向老年用户的适老化无障碍设计方案</p>
-          <div class="img-showcase" style="margin-top:1.25rem;">
-            <img src="assets/accessibility-spec.jpg" alt="无障碍设计规范展示">
-          </div>
-          <p class="img-caption">高对比模式、焦点环导航、字体缩放面板</p>
+          <p class="img-caption">无障碍适老化设计 — 高对比、大控件、听觉辅助、字体缩放多维包容</p>
         </div>
       </div>
 

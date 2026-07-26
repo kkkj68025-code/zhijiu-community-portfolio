@@ -3364,7 +3364,6 @@
         <li><a href="#process" data-nav="process">制作流程</a></li>
         <li><a href="#design-system" data-nav="design-system">设计系统</a></li>
         <li><a href="#accessibility" data-nav="accessibility">无障碍</a></li>
-        <li><a href="#components" data-nav="components">组件库</a></li>
         <li><a href="#review" data-nav="review">项目复盘</a></li>
       </ul>
     </div>
@@ -5323,90 +5322,6 @@ interface EmptyStateProps {
 
     </section>
 
-    <!-- ===== 板块8：组件库 ===== -->
-    <section class="section" id="components">
-      <div class="section-header">
-        <div class="section-number">板块 04</div>
-        <h2 class="section-title">业务可复用组件库</h2>
-        <p class="section-desc">全套定制业务组件覆盖急救场景核心交互，全站17个页面统一调用复用，附带前端参数注释，减少重复设计工作量。</p>
-      </div>
-
-      <div class="two-col">
-        <div class="component-grid" style="margin:0;">
-          <div class="component-card">
-            <div class="comp-preview">
-              <div class="mock-btn-sos">SOS</div>
-            </div>
-            <h4>急救SOS按钮</h4>
-            <p>圆形脉冲动画，长按3秒防误触</p>
-          </div>
-          <div class="component-card">
-            <div class="comp-preview">
-              <div class="mock-btn-group">
-                <div class="mock-btn primary">主要</div>
-                <div class="mock-btn secondary">次要</div>
-                <div class="mock-btn ghost">幽灵</div>
-              </div>
-            </div>
-            <h4>常规按钮组</h4>
-            <p>三种层级，统一圆角与状态</p>
-          </div>
-          <div class="component-card">
-            <div class="comp-preview">
-              <div class="mock-tags">
-                <div class="mock-tag danger">紧急</div>
-                <div class="mock-tag warning">警告</div>
-                <div class="mock-tag success">已完成</div>
-                <div class="mock-tag info">处理中</div>
-              </div>
-            </div>
-            <h4>状态标签</h4>
-            <p>四级语义色彩标签</p>
-          </div>
-          <div class="component-card">
-            <div class="comp-preview">
-              <div class="mock-alert">
-                <div class="alert-title">⚠️ 紧急告警</div>
-                <div class="alert-desc">检测到新的SOS求助</div>
-              </div>
-            </div>
-            <h4>告警弹窗</h4>
-            <p>强视觉层级 + 操作引导</p>
-          </div>
-          <div class="component-card">
-            <div class="comp-preview">
-              <div class="mock-empty">
-                <div class="empty-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:var(--muted);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none;"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M12 13v-2"/></svg></div>
-                <div class="empty-text">暂无工单记录</div>
-              </div>
-            </div>
-            <h4>空状态占位</h4>
-            <p>场景化插画 + 引导文案</p>
-          </div>
-          <div class="component-card">
-            <div class="comp-preview">
-              <div class="mock-stat">
-                <div class="stat-num">128</div>
-                <div class="stat-label">本月响应次数</div>
-              </div>
-            </div>
-            <h4>统计数据卡片</h4>
-            <p>大字号数字 + 趋势指示</p>
-          </div>
-        </div>
-        <div>
-          <div class="img-showcase">
-            <img src="assets/illustration-components.jpg" alt="组件库概念插画">
-          </div>
-          <p class="img-caption">组件库设计理念：系统化构建，全局复用</p>
-          <div class="img-showcase" style="margin-top:1.25rem;">
-            <img src="assets/component-library.jpg" alt="完整组件库展示">
-          </div>
-          <p class="img-caption">每个组件附带约束参数与交互状态说明</p>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== 板块11：复盘总结 ===== -->
     <section class="section" id="review">
       <div class="section-header">
@@ -5573,7 +5488,7 @@ interface EmptyStateProps {
       /* 导航栏滚动效果 */
       var nav = document.getElementById('topNav');
       var navLinks = document.querySelectorAll('.top-nav-links a');
-      var sections = ['preview','process','design-system','accessibility','components','review'];
+      var sections = ['preview','process','design-system','accessibility','review'];
 
       window.addEventListener('scroll', function(){
         if(window.pageYOffset > 40){

@@ -1290,6 +1290,102 @@
       border-radius: 1px;
     }
 
+    /* ===== 竞品分析 ===== */
+    .competitor-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .competitor-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .competitor-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .competitor-card h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .competitor-card h4::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .competitor-card.defect h4::before { background: var(--warning); }
+    .competitor-card.advantage h4::before { background: var(--success); }
+    .competitor-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .competitor-card li {
+      font-size: 0.85rem;
+      color: var(--ink2);
+      line-height: 1.7;
+      padding: 0.3rem 0 0.3rem 1.1rem;
+      position: relative;
+    }
+    .competitor-card li::before {
+      content: '·';
+      position: absolute;
+      left: 0.3rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ===== 设计目标列表 ===== */
+    .goal-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .goal-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+      border-radius: var(--radius-md);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .goal-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 12px 24px rgba(0,0,0,0.08);
+    }
+    .goal-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-bg);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .goal-text {
+      font-size: 0.85rem;
+      color: var(--ink2);
+      line-height: 1.65;
+    }
+
     /* ===== TWO COL ===== */
     .two-col {
       display: grid;
@@ -3863,25 +3959,28 @@
         <p class="section-desc">从真实急救场景出发，深入挖掘社区中老年群体与急救志愿者双方的核心诉求。</p>
       </div>
 
+      <h3 class="sub-heading" style="margin-top:0;">背景现状</h3>
+      <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;margin-bottom:2rem;">国内社区老年人口占比持续提升，独居老人突发心梗、晕厥等急症时存在<mark class="key">自救难、求救慢</mark>问题；现有急救工具多偏向年轻群体，字体偏小、操作步骤繁琐，不适合视力、手脚灵活度下降的老年用户。社区 AED 设备点位分散，志愿者资源无统一调度平台，突发情况时无法快速匹配就近施救人员，延误<mark class="key">黄金 4 分钟</mark>急救窗口。</p>
+
+      <h3 class="sub-heading">四大核心痛点</h3>
       <div class="two-col">
         <div>
-          <h3 class="sub-heading" style="margin-top:0;">核心痛点</h3>
           <div class="pain-grid">
             <div class="pain-card">
               <div class="pain-label">痛点 01</div>
-              <p>社区中老年群体突发心梗、脑卒中等急症时，<mark class="key">难以快速完成一键呼救</mark>，传统拨打120流程耗时过长。</p>
+              <p><mark class="key">老年操作门槛高</mark>：普通急救小程序按钮过小、层级深，老人紧急状态下无法快速找到呼救入口。</p>
             </div>
             <div class="pain-card">
               <div class="pain-label">痛点 02</div>
-              <p>附近AED设备<mark class="key">查询路径繁琐</mark>，紧急时刻无法快速获取设备位置与导航信息。</p>
+              <p><mark class="key">资源信息割裂</mark>：AED 设备、持证志愿者、社区卫生站信息分散，无统一可视化地图。</p>
             </div>
             <div class="pain-card">
               <div class="pain-label">痛点 03</div>
-              <p>市面急救类软件界面繁杂，信息层级混乱，<mark class="key">紧急场景下信息识别效率极低</mark>，老年用户操作门槛高。</p>
+              <p><mark class="key">缺乏防误触机制</mark>：紧急呼救易误触，误报警会占用志愿者人力，浪费急救资源。</p>
             </div>
             <div class="pain-card">
               <div class="pain-label">痛点 04</div>
-              <p>社区持证急救志愿者缺乏统一调度平台，<mark class="key">无法及时响应周边紧急求助</mark>，急救资源利用率不足。</p>
+              <p><mark class="key">无适老化适配</mark>：低对比度文字、复杂弹窗，视障 / 色弱人群无法独立使用。</p>
             </div>
           </div>
         </div>
@@ -3912,6 +4011,49 @@
       <div style="margin-top:2rem;">
         <h3 class="sub-heading">产品定位</h3>
         <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;">智救社区定位为<mark class="key">轻量化网页急救响应平台</mark>，兼顾居民一键呼救与志愿者工单管理双端业务闭环。采用Web技术栈降低使用门槛（无需下载App），以SOS长按交互为核心触点，串联AED资源查询、志愿者调度、急救知识普及等完整急救链路。</p>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:2.5rem;">竞品分析</h3>
+      <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;">分析对象：120 急救官方平台、AED 导航小程序、社区健康服务公众号</p>
+      <div class="competitor-row">
+        <div class="competitor-card defect">
+          <h4>竞品共性缺陷</h4>
+          <ul>
+            <li>缺少专门适老化模式，未针对老年人优化触控、字体</li>
+            <li>无志愿者线上接单调度体系，仅提供设备点位查看</li>
+            <li>紧急呼救无长按防误触逻辑，误报率高</li>
+            <li>健康急救隐私权限划分模糊，缺少分级授权机制</li>
+          </ul>
+        </div>
+        <div class="competitor-card advantage">
+          <h4>本项目差异化机会点</h4>
+          <ul>
+            <li>一键切换老年大字高对比模式，全页面遵循无障碍标准</li>
+            <li>SOS 长按脉冲交互，3 秒长按触发呼救，杜绝误触</li>
+            <li>居民 - 志愿者 - 管理员三端角色区分，独立操作后台</li>
+            <li>医疗健康数据脱敏展示，紧急场景临时解锁隐私信息</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:2.5rem;">本次设计目标</h3>
+      <div class="goal-list">
+        <div class="goal-item">
+          <div class="goal-num">1</div>
+          <div class="goal-text">简化紧急呼救路径，呼救操作由行业平均 6 步缩减至 3 步</div>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">2</div>
+          <div class="goal-text">搭建一体化资源地图，整合 AED、志愿者、社区医疗点位</div>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">3</div>
+          <div class="goal-text">全页面落地无障碍适老化设计，适配老年、视障、色弱用户</div>
+        </div>
+        <div class="goal-item">
+          <div class="goal-num">4</div>
+          <div class="goal-text">增加防误触、隐私分级、异常兜底页面，覆盖全部应急场景</div>
+        </div>
       </div>
 
       <h3 class="sub-heading" style="margin-top:2.5rem;">用户访谈核心摘录</h3>

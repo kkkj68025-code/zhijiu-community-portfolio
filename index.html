@@ -773,11 +773,11 @@
       max-width: 900px; margin: 0 auto;
     }
     .sc-decision-card {
-      padding: 1.75rem; background: #fff;
-      border: 1px solid #f3f4f6; border-radius: 20px;
+      padding: 1.25rem; background: #fff;
+      border: 1px solid #f3f4f6; border-radius: 16px;
       transition: all 0.25s ease; position: relative;
       box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      display: flex; flex-direction: column; gap: 0.875rem;
+      display: flex; flex-direction: column; gap: 0.625rem;
     }
     .sc-decision-card:hover { 
       transform: translateY(-4px); 
@@ -785,24 +785,24 @@
       border-color: #fda4af;
     }
     .sc-decision-top {
-      display: flex; align-items: center; gap: 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
     }
     .sc-decision-num {
-      width: 36px; height: 36px; border-radius: 10px;
+      width: 28px; height: 28px; border-radius: 8px;
       background: linear-gradient(135deg, #fff1f2, #fce7f3);
       color: #e8365d;
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; font-weight: 700;
+      font-size: 0.8rem; font-weight: 700;
       flex-shrink: 0;
     }
     .sc-decision-icon {
-      width: 44px; height: 44px; border-radius: 12px;
+      width: 36px; height: 36px; border-radius: 10px;
       background: #fff1f2; display: flex; align-items: center;
       justify-content: center; color: #e8365d;
       flex-shrink: 0;
     }
-    .sc-decision-icon svg { width: 20px; height: 20px; }
-    .sc-decision-card h4 { font-size: 1rem; font-weight: 600; color: #111827; margin: 0; }
+    .sc-decision-icon svg { width: 18px; height: 18px; }
+    .sc-decision-card h4 { font-size: 1rem; font-weight: 600; color: #111827; margin: 0; line-height: 1.4; }
     .sc-decision-card p { font-size: 0.85rem; color: #6b7280; line-height: 1.7; margin: 0; }
 
     /* 流程时间轴 - 横向布局 */
@@ -2414,6 +2414,370 @@
     .summary-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; }
     .summary-card.iteration ul li::before { content: '→'; color: var(--accent2); }
 
+    /* ===== 更多设计案例 ===== */
+    .more-cases {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 2rem;
+    }
+    .more-cases-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .more-cases-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: #fff1f2;
+      padding: 0.3rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    .more-cases-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 0.5rem;
+    }
+    .more-cases-sub {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .case-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--rule-light);
+      transition: box-shadow 0.3s ease;
+    }
+    .case-showcase:hover {
+      box-shadow: 0 8px 36px rgba(0,0,0,0.1);
+    }
+    .case-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .case-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #6b7280;
+      background: #f3f4f6;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .case-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+    .case-slogan {
+      font-size: 1.05rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .case-positioning {
+      font-size: 0.88rem;
+      color: var(--ink2);
+      line-height: 1.8;
+      margin: 0;
+      padding: 1rem;
+      background: #fafafa;
+      border-radius: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .case-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .case-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--ink2);
+      line-height: 1.6;
+    }
+    .case-feature svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .case-screenshots {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .case-figma-wrapper {
+      position: relative;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f9fafb;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .case-figma-wrapper.compact {
+      max-width: 393px;
+      margin: 0 auto;
+      aspect-ratio: 393 / 852;
+    }
+    .case-figma-frame {
+      width: 100%;
+      height: 520px;
+      border: none;
+      display: block;
+    }
+    /* 绿伴案例 - 全宽上下布局 */
+    .case-showcase-full {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--rule-light);
+      transition: box-shadow 0.3s ease;
+    }
+    .case-showcase-full:hover {
+      box-shadow: 0 8px 36px rgba(0,0,0,0.1);
+    }
+    .case-showcase-full .case-info {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .case-showcase-full .case-info-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .case-showcase-full .case-features {
+      grid-column: span 2;
+    }
+    .case-showcase-full .case-figma-frame {
+      height: 680px;
+      border-radius: 12px;
+    }
+    .case-showcase-full .case-figma-fallback {
+      border-radius: 12px;
+      padding: 4rem 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .case-showcase-full { padding: 1.5rem; }
+      .case-showcase-full .case-info { grid-template-columns: 1fr; }
+      .case-showcase-full .case-features { grid-column: span 1; }
+      .case-showcase-full .case-figma-frame { height: 500px; }
+    }
+    .case-figma-fallback {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: #f9fafb;
+      border-radius: 16px;
+    }
+    .case-figma-fallback.show {
+      display: flex;
+    }
+    .case-figma-fallback p {
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin: 0;
+    }
+    .case-figma-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .case-figma-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: none;
+    }
+    .case-figma-btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .case-figma-btn.primary:hover {
+      background: #d63150;
+    }
+    .case-figma-btn.secondary {
+      background: #fff;
+      color: #374151;
+      border: 1px solid #e5e7eb;
+    }
+    .case-figma-btn.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .case-figma-btn svg { width: 16px; height: 16px; }
+    .case-carousel {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f9fafb;
+    }
+    .case-carousel-track {
+      display: flex;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .case-carousel-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+    }
+    .case-carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+    }
+    .case-carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .case-carousel-btn {
+      position: static;
+      transform: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #374151;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+    .case-carousel-btn:hover {
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+      color: var(--accent);
+    }
+    .case-carousel-btn.prev,
+    .case-carousel-btn.next {
+      left: auto;
+      right: auto;
+    }
+    .case-carousel-btn svg { width: 16px; height: 16px; stroke-width: 2; }
+    .case-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0;
+    }
+    .case-carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d1d5db;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s ease;
+    }
+    .case-carousel-dot.active {
+      background: var(--accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .case-carousel-label {
+      text-align: center;
+      font-size: 0.82rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .case-tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      padding: 0.5rem;
+      background: #f9fafb;
+      border-radius: 12px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid var(--rule-light);
+    }
+    .case-tab {
+      padding: 0.6rem 1.5rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .case-tab:hover {
+      color: var(--ink2);
+      background: rgba(232,54,93,0.04);
+    }
+    .case-tab.active {
+      background: #fff;
+      color: var(--accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .case-panel {
+      display: none;
+      animation: fadeInUp 0.4s ease;
+    }
+    .case-panel.active {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .case-showcase {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+      .case-tabs-nav {
+        width: 100%;
+        overflow-x: auto;
+      }
+    }
+
     /* ===== FOOTER ===== */
     .portfolio-footer {
       text-align: center;
@@ -2761,7 +3125,7 @@
       line-height: 1.9;
     }
 
-    /* ===== 制作流程 侧边导航 ===== */
+    /* ===== 设计过程 侧边导航 ===== */
     .process-section {
       padding: 5rem 0;
       border-top: 1px solid var(--rule-light);
@@ -2890,7 +3254,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 制作流程内的子板块去掉顶部边框，避免双线 */
+    /* 设计过程内的子板块去掉顶部边框，避免双线 */
     .process-panel .section {
       border-top: none;
       padding-top: 0;
@@ -3512,11 +3876,12 @@
       <ul class="top-nav-links">
         <li><a href="#project-info" data-nav="project-info">项目概览</a></li>
         <li><a href="#preview" data-nav="preview">作品速览</a></li>
-        <li><a href="#process" data-nav="process">制作流程</a></li>
+        <li><a href="#process" data-nav="process">设计过程</a></li>
         <li><a href="#design-system" data-nav="design-system">设计系统</a></li>
         <li><a href="#accessibility" data-nav="accessibility">无障碍</a></li>
         <li><a href="#metrics" data-nav="metrics">量化成果</a></li>
         <li><a href="#review" data-nav="review">项目复盘</a></li>
+        <li><a href="#more-cases" data-nav="more-cases">更多案例</a></li>
       </ul>
     </div>
   </nav>
@@ -3795,39 +4160,51 @@
       <p class="sc-section-sub">每一个决策都有明确的用户价值出发点，而不仅仅是视觉喜好</p>
       <div class="sc-decision-grid">
         <div class="sc-decision-card">
-          <div class="sc-decision-num">1</div>
-          <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
-          <h4>珊瑚红品牌色 #e8365d</h4>
+          <div class="sc-decision-top">
+            <div class="sc-decision-num">1</div>
+            <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+            <h4>珊瑚红品牌色 #e8365d</h4>
+          </div>
           <p>医疗红的紧迫感 + 珊瑚色的温度感，在紧急场景中传递"可信赖的行动力"，对比度达 WCAG AA。</p>
         </div>
         <div class="sc-decision-card">
-          <div class="sc-decision-num">2</div>
-          <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></div>
-          <h4>无障碍优先</h4>
+          <div class="sc-decision-top">
+            <div class="sc-decision-num">2</div>
+            <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></div>
+            <h4>无障碍优先</h4>
+          </div>
           <p>全站 ARIA 语义化、键盘导航、跳过导航链接、焦点陷阱、高对比度模式、字体缩放，覆盖 WCAG 2.1 AA。</p>
         </div>
         <div class="sc-decision-card">
-          <div class="sc-decision-num">3</div>
-          <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18 22 12 16 6"/><path d="M8 6 2 12 8 18"/></svg></div>
-          <h4>完整设计 Token 体系</h4>
+          <div class="sc-decision-top">
+            <div class="sc-decision-num">3</div>
+            <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18 22 12 16 6"/><path d="M8 6 2 12 8 18"/></svg></div>
+            <h4>完整设计 Token 体系</h4>
+          </div>
           <p>在 CSS Custom Properties 中定义颜色、间距、阴影、圆角等 40+ Token，与 Tailwind 双向映射，保证一致性。</p>
         </div>
         <div class="sc-decision-card">
-          <div class="sc-decision-num">4</div>
-          <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
-          <h4>组件化系统</h4>
+          <div class="sc-decision-top">
+            <div class="sc-decision-num">4</div>
+            <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+            <h4>组件化系统</h4>
+          </div>
           <p>Button、Badge、Modal、Input、PageHeader、EmptyState 等 6+ 可复用组件，Props API 覆盖所有业务变体。</p>
         </div>
         <div class="sc-decision-card">
-          <div class="sc-decision-num">5</div>
-          <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <h4>性能与体验</h4>
+          <div class="sc-decision-top">
+            <div class="sc-decision-num">5</div>
+            <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h4>性能与体验</h4>
+          </div>
           <p>侧边栏可折叠节省空间，Hash 路由支持静态托管，过渡动画遵循 150ms 原则，不增加认知负担。</p>
         </div>
         <div class="sc-decision-card">
-          <div class="sc-decision-num">6</div>
-          <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg></div>
-          <h4>信息优先级</h4>
+          <div class="sc-decision-top">
+            <div class="sc-decision-num">6</div>
+            <div class="sc-decision-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg></div>
+            <h4>信息优先级</h4>
+          </div>
           <p>在生命安全场景中，每个页面只传递一个主要行动。次要信息收折，不在关键时刻分散注意力。</p>
         </div>
       </div>
@@ -3992,23 +4369,23 @@
       </div>
     </section>
 
-    <!-- ===== 制作流程 ===== -->
+    <!-- ===== 设计过程 ===== -->
     <section class="section process-section" id="process">
       <div class="section-header">
         <div class="section-number">板块 01</div>
-        <h2 class="section-title">制作流程</h2>
+        <h2 class="section-title">设计过程</h2>
         <p class="section-desc" style="margin:0 auto;">从问题定义到设计决策，完整展示UI设计思维链条。点击左侧导航切换各环节。</p>
       </div>
 
       <div class="process-layout">
         <aside class="process-sidebar">
-          <div class="process-sidebar-title">制作流程导航</div>
+          <div class="process-sidebar-title">设计过程导航</div>
           <div class="process-tabs" id="processTabs">
             <button class="process-tab active" data-panel="processPanel0" onclick="switchProcess('processPanel0')"><span class="tab-num">1</span>项目调研</button>
             <button class="process-tab" data-panel="processPanel1" onclick="switchProcess('processPanel1')"><span class="tab-num">2</span>问题定义</button>
             <button class="process-tab" data-panel="processPanel6" onclick="switchProcess('processPanel6')"><span class="tab-num">3</span>设计决策</button>
             <button class="process-tab" data-panel="processPanel2" onclick="switchProcess('processPanel2')"><span class="tab-num">4</span>信息架构</button>
-            <button class="process-tab" data-panel="processPanel3" onclick="switchProcess('processPanel3')"><span class="tab-num">5</span>开始制作</button>
+            <button class="process-tab" data-panel="processPanel3" onclick="switchProcess('processPanel3')"><span class="tab-num">5</span>视觉执行</button>
             <button class="process-tab" data-panel="processPanel4" onclick="switchProcess('processPanel4')"><span class="tab-num">6</span>案例原型</button>
             <button class="process-tab" data-panel="processPanel5" onclick="switchProcess('processPanel5')"><span class="tab-num">7</span>可用性测试</button>
           </div>
@@ -4134,6 +4511,7 @@
         </div>
       </div>
     </section>
+      </div>
 
 <!-- Panel 2: 问题定义与拆解 -->
       <div class="process-panel" id="processPanel1">
@@ -4338,12 +4716,12 @@
     </section>
       </div>
 
-      <!-- Panel 4: 开始制作 -->
+      <!-- Panel 4: 视觉执行 -->
       <div class="process-panel" id="processPanel3">
         <section class="section" id="production">
           <div class="section-header">
             <div class="section-number">环节 05</div>
-            <h2 class="section-title">开始制作 — 低保真到高保真</h2>
+            <h2 class="section-title">视觉执行 — 低保真到高保真</h2>
             <p class="section-desc" style="margin:0 auto;">从灰度低保真原型到线框图再到初稿高保真，展示设计从概念结构到视觉落地的完整制作过程。</p>
           </div>
 
@@ -4381,7 +4759,7 @@
           </div>
 
           <div style="background:linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);border-radius:var(--radius-lg);padding:1.5rem;box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);margin-top:2rem;">
-            <p style="font-size:0.9rem;color:var(--ink2);line-height:1.8;"><strong style="color:var(--ink);">制作流程说明：</strong>低保真阶段使用灰度色块快速验证信息架构与布局逻辑 → 线框图阶段细化组件结构与交互区域 → 初稿高保真阶段引入品牌色系完成视觉落地 → 最终迭代优化至交付标准。</p>
+            <p style="font-size:0.9rem;color:var(--ink2);line-height:1.8;"><strong style="color:var(--ink);">设计过程说明：</strong>低保真阶段使用灰度色块快速验证信息架构与布局逻辑 → 线框图阶段细化组件结构与交互区域 → 初稿高保真阶段引入品牌色系完成视觉落地 → 最终迭代优化至交付标准。</p>
           </div>
 
           <h3 class="sub-heading" style="margin-top:2.5rem;">版本迭代记录</h3>
@@ -4726,7 +5104,7 @@
         </div>
         <div class="flow-arrow">→</div>
         <div class="flow-step">
-          <div class="step-icon" style="background:var(--accent);color:#fff;border-color:var(--accent);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+          <div class="step-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <div class="step-num">步骤 02</div>
           <div class="step-text">长按SOS<br>一键发送求助</div>
         </div>
@@ -4880,7 +5258,7 @@
           panels.forEach(function(p){
             p.classList.toggle('active', p.id === panelId);
           });
-          // 滚动到制作流程区域顶部
+          // 滚动到设计过程区域顶部
           var section = document.getElementById('process');
           if(section){
             var top = section.getBoundingClientRect().top + window.pageYOffset - 20;
@@ -5671,6 +6049,128 @@ interface EmptyStateProps {
       </div>
     </section>
 
+    <!-- ===== 更多设计案例 ===== -->
+    <section class="more-cases" id="more-cases">
+      <div class="more-cases-header">
+        <span class="more-cases-badge">更多设计案例</span>
+        <h2 class="more-cases-title">其他作品展示</h2>
+        <p class="more-cases-sub">除智救社区外，以下为个人独立完成的其他设计案例</p>
+      </div>
+
+      <!-- 案例切换导航 -->
+      <div class="case-tabs-nav">
+        <button class="case-tab active" data-case="greenmate" onclick="switchCase('greenmate')">绿伴 GreenMate</button>
+        <button class="case-tab" data-case="miemie" onclick="switchCase('miemie')">咩咩圈</button>
+      </div>
+
+      <div class="case-panels">
+        <!-- 案例 1：绿伴 -->
+        <div class="case-panel active" id="casePanel_greenmate">
+          <div class="case-showcase">
+            <div class="case-info">
+              <span class="case-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M12 2a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9z"/><path d="M12 7v10"/><path d="M8 11l4-4 4 4"/></svg>
+                生活工具 · 案例一
+              </span>
+              <h3 class="case-name">绿伴 GreenMate</h3>
+              <p class="case-slogan">植物养护助手 · 让每一株植物都被温柔以待</p>
+              <div class="case-positioning">
+                面向都市植物爱好者的轻量级养护工具，通过环境感知、拍照识别、智能待办三大核心能力，解决"忘记浇水""不懂养护"的痛点，将养护任务游戏化为每日打卡习惯。
+              </div>
+              <div class="case-features">
+                <div class="case-feature">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                  <span>拍照识别植物，一键获取养护方案</span>
+                </div>
+                <div class="case-feature">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><path d="M9 11V7a3 3 0 0 1 6 0v4"/></svg>
+                  <span>环境感知数据：温度、湿度、光照实时监测</span>
+                </div>
+                <div class="case-feature">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  <span>智能待办清单，定时提醒浇水、通风、施肥</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-screenshots">
+              <div class="case-figma-wrapper compact" id="caseGreenMateWrapper">
+                <iframe class="case-figma-frame" id="caseGreenMateFrame" src="https://zipper-icing-05250689.figma.site" title="绿伴 GreenMate 植物养护助手原型" loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+              </div>
+              <div class="case-figma-fallback" id="caseGreenMateFallback">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><path d="M12 2a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9z"/><path d="M12 7v10"/><path d="M8 11l4-4 4 4"/></svg>
+                <p>原型加载中，请稍候…</p>
+                <div class="case-figma-actions">
+                  <button class="case-figma-btn primary" onclick="reloadCaseFigma('caseGreenMate')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                    重新加载
+                  </button>
+                  <a class="case-figma-btn secondary" href="https://zipper-icing-05250689.figma.site" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    新窗口打开
+                  </a>
+                </div>
+              </div>
+              <div class="case-carousel-label">绿伴 GreenMate · 可交互原型</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 案例 2：咩咩圈 -->
+        <div class="case-panel" id="casePanel_miemie">
+          <div class="case-showcase">
+            <div class="case-info">
+              <span class="case-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                情绪疗愈 · 案例二
+              </span>
+              <h3 class="case-name">咩咩圈</h3>
+              <p class="case-slogan">"有我陪着，慢慢来。"</p>
+              <div class="case-positioning">
+                一个为情绪困扰者提供的安全、匿名、有疗愈价值的数字陪伴空间。匿名倾诉是人的天然需求，一个经过专业设计的"树洞"，是通往自我洞察和专业帮助的起点。
+              </div>
+              <div class="case-features">
+                <div class="case-feature">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  <span>绝对安全的匿名倾诉环境</span>
+                </div>
+                <div class="case-feature">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                  <span>科学有效的自我情绪管理工具</span>
+                </div>
+                <div class="case-feature">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span>温暖共情的同伴支持社区</span>
+                </div>
+              </div>
+            </div>
+            <div class="case-screenshots">
+              <div class="case-carousel" id="miemieCarousel">
+                <div class="case-carousel-track">
+                  <div class="case-carousel-slide"><img src="assets/case-miemie-1.png" alt="咩咩圈 - 抱抱花缘漂流瓶界面"></div>
+                  <div class="case-carousel-slide"><img src="assets/case-miemie-2.png" alt="咩咩圈 - 闻见白噪音主页"></div>
+                  <div class="case-carousel-slide"><img src="assets/case-miemie-3.png" alt="咩咩圈 - 个人中心与心情日历"></div>
+                </div>
+              </div>
+              <div class="case-carousel-nav">
+                <button class="case-carousel-btn prev" onclick="carouselPrev('miemieCarousel')" aria-label="上一张">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <div class="case-carousel-dots" data-carousel="miemieCarousel">
+                  <button class="case-carousel-dot active" onclick="carouselGo('miemieCarousel', 0)" aria-label="第1张"></button>
+                  <button class="case-carousel-dot" onclick="carouselGo('miemieCarousel', 1)" aria-label="第2张"></button>
+                  <button class="case-carousel-dot" onclick="carouselGo('miemieCarousel', 2)" aria-label="第3张"></button>
+                </div>
+                <button class="case-carousel-btn next" onclick="carouselNext('miemieCarousel')" aria-label="下一张">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              <div class="case-carousel-label" id="miemieCarouselLabel">01 / 03 · 抱抱花缘 · 漂流瓶</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 页脚 ===== -->
     <footer class="portfolio-footer">
       <img class="footer-logo" src="assets/logo-heart-ecg.jpg" alt="智救社区">
@@ -5868,6 +6368,125 @@ interface EmptyStateProps {
     function togglePhoneSidebar() {
       window.open('https://plank-ahead-31608886.figma.site/', '_blank');
     }
+
+    // ===== 案例轮播 =====
+    var carouselStates = {};
+    var carouselLabels = {
+      miemieCarousel: [
+        '抱抱花缘 · 漂流瓶',
+        '闻见白噪音 · 主页',
+        '个人中心 · 心情日历'
+      ]
+    };
+
+    // ===== 案例切换 =====
+    function switchCase(caseId) {
+      document.querySelectorAll('.case-tab').forEach(function(tab) {
+        tab.classList.toggle('active', tab.dataset.case === caseId);
+      });
+      document.querySelectorAll('.case-panel').forEach(function(panel) {
+        panel.classList.toggle('active', panel.id === 'casePanel_' + caseId);
+      });
+    }
+
+    // ===== 案例Figma iframe加载失败处理 =====
+    function reloadCaseFigma(prefix) {
+      var frame = document.getElementById(prefix + 'Frame');
+      var fallback = document.getElementById(prefix + 'Fallback');
+      if (frame) {
+        frame.style.display = 'block';
+        fallback.classList.remove('show');
+        frame.src = frame.src.split('?')[0] + '?reload=' + Date.now();
+      }
+    }
+    // 15秒后检测是否加载失败
+    document.addEventListener('DOMContentLoaded', function () {
+      var caseFrames = [
+        { frame: 'caseGreenMateFrame', fallback: 'caseGreenMateFallback', url: 'https://zipper-icing-05250689.figma.site' }
+      ];
+      caseFrames.forEach(function (item) {
+        var frame = document.getElementById(item.frame);
+        var fallback = document.getElementById(item.fallback);
+        if (!frame || !fallback) return;
+        var loaded = false;
+        frame.addEventListener('load', function () { loaded = true; });
+        setTimeout(function () {
+          if (!loaded) {
+            frame.style.display = 'none';
+            fallback.classList.add('show');
+          }
+        }, 15000);
+      });
+    });
+
+    function getCarouselIndex(id) {
+      return carouselStates[id] || 0;
+    }
+
+    function setCarouselIndex(id, index) {
+      var carousel = document.getElementById(id);
+      if (!carousel) return;
+      var track = carousel.querySelector('.case-carousel-track');
+      if (!track) return;
+      var slides = track.querySelectorAll('.case-carousel-slide');
+      var total = slides.length;
+      if (index < 0) index = total - 1;
+      if (index >= total) index = 0;
+      carouselStates[id] = index;
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      // 更新分页点
+      var dotsContainer = document.querySelector('.case-carousel-dots[data-carousel="' + id + '"]');
+      if (dotsContainer) {
+        var dots = dotsContainer.querySelectorAll('.case-carousel-dot');
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('active', i === index);
+        });
+      }
+      // 更新标签
+      var labelEl = document.getElementById(id + 'Label');
+      if (labelEl && carouselLabels[id]) {
+        var num = String(index + 1).padStart(2, '0');
+        var totalStr = String(total).padStart(2, '0');
+        labelEl.textContent = num + ' / ' + totalStr + ' · ' + carouselLabels[id][index];
+      }
+    }
+
+    function carouselNext(id) {
+      setCarouselIndex(id, getCarouselIndex(id) + 1);
+    }
+    function carouselPrev(id) {
+      setCarouselIndex(id, getCarouselIndex(id) - 1);
+    }
+    function carouselGo(id, index) {
+      setCarouselIndex(id, index);
+    }
+
+    // 自动轮播（可选，hover暂停）
+    var autoPlayTimers = {};
+    function startAutoPlay(id, interval) {
+      if (autoPlayTimers[id]) clearInterval(autoPlayTimers[id]);
+      autoPlayTimers[id] = setInterval(function () {
+        carouselNext(id);
+      }, interval || 4000);
+    }
+    function stopAutoPlay(id) {
+      if (autoPlayTimers[id]) {
+        clearInterval(autoPlayTimers[id]);
+        autoPlayTimers[id] = null;
+      }
+    }
+
+    // 初始化所有轮播
+    document.addEventListener('DOMContentLoaded', function () {
+      var carousels = document.querySelectorAll('.case-carousel');
+      carousels.forEach(function (c) {
+        var id = c.id;
+        setCarouselIndex(id, 0);
+        startAutoPlay(id, 5000);
+        c.addEventListener('mouseenter', function () { stopAutoPlay(id); });
+        c.addEventListener('mouseleave', function () { startAutoPlay(id, 5000); });
+      });
+    });
   </script>
 
 </body>

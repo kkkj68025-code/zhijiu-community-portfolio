@@ -2725,46 +2725,12 @@
       margin-top: 0.5rem;
       font-weight: 500;
     }
-    .case-tabs-nav {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-      padding: 0.5rem;
-      background: #f9fafb;
-      border-radius: 12px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-      border: 1px solid var(--rule-light);
-    }
-    .case-tab {
-      padding: 0.6rem 1.5rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--muted);
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      white-space: nowrap;
-    }
-    .case-tab:hover {
-      color: var(--ink2);
-      background: rgba(232,54,93,0.04);
-    }
-    .case-tab.active {
-      background: #fff;
-      color: var(--accent);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
     .case-panel {
-      display: none;
+      display: block;
       animation: fadeInUp 0.4s ease;
     }
-    .case-panel.active {
-      display: block;
+    .case-panel + .case-panel {
+      margin-top: 2rem;
     }
     @media (max-width: 768px) {
       .case-showcase {
@@ -2772,10 +2738,7 @@
         gap: 1.5rem;
         padding: 1.5rem;
       }
-      .case-tabs-nav {
-        width: 100%;
-        overflow-x: auto;
-      }
+
     }
 
     /* ===== FOOTER ===== */
@@ -6057,15 +6020,8 @@ interface EmptyStateProps {
         <p class="more-cases-sub">除智救社区外，以下为个人独立完成的其他设计案例</p>
       </div>
 
-      <!-- 案例切换导航 -->
-      <div class="case-tabs-nav">
-        <button class="case-tab active" data-case="greenmate" onclick="switchCase('greenmate')">绿伴 GreenMate</button>
-        <button class="case-tab" data-case="miemie" onclick="switchCase('miemie')">咩咩圈</button>
-      </div>
-
-      <div class="case-panels">
-        <!-- 案例 1：绿伴 -->
-        <div class="case-panel active" id="casePanel_greenmate">
+      <!-- 案例 1：绿伴 -->
+      <div class="case-panel" id="casePanel_greenmate">
           <div class="case-showcase">
             <div class="case-info">
               <span class="case-tag">
@@ -6168,7 +6124,6 @@ interface EmptyStateProps {
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <!-- ===== 页脚 ===== -->
@@ -6378,16 +6333,6 @@ interface EmptyStateProps {
         '个人中心 · 心情日历'
       ]
     };
-
-    // ===== 案例切换 =====
-    function switchCase(caseId) {
-      document.querySelectorAll('.case-tab').forEach(function(tab) {
-        tab.classList.toggle('active', tab.dataset.case === caseId);
-      });
-      document.querySelectorAll('.case-panel').forEach(function(panel) {
-        panel.classList.toggle('active', panel.id === 'casePanel_' + caseId);
-      });
-    }
 
     // ===== 案例Figma iframe加载失败处理 =====
     function reloadCaseFigma(prefix) {

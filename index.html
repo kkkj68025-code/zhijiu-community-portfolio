@@ -2751,58 +2751,6 @@
       color: var(--warning);
     }
 
-    /* ===== 业务差异化与亮点 ===== */
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin: 1.5rem 0 2.5rem;
-    }
-    .highlight-card {
-      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-left: 3px solid var(--accent);
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .highlight-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08), 0 16px 48px rgba(0,0,0,0.12);
-    }
-    .highlight-card .hl-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--accent-bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .highlight-card .hl-icon svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--accent);
-      stroke-width: 1.8;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .highlight-card .hl-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--ink);
-    }
-    .highlight-card .hl-desc {
-      font-size: 0.85rem;
-      color: var(--ink2);
-      line-height: 1.75;
-    }
-
     /* ===== 作品速览 ===== */
     .preview-summary {
       text-align: center;
@@ -4134,7 +4082,7 @@
 
       <h3 class="sub-heading" style="margin-top:2.5rem;">竞品分析</h3>
       <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;">分析对象：120 急救官方平台、AED 导航小程序、社区健康服务公众号</p>
-      <div class="competitor-row" style="grid-template-columns:1fr;">
+      <div class="competitor-row">
         <div class="competitor-card defect">
           <h4>竞品共性缺陷</h4>
           <ul>
@@ -4142,6 +4090,15 @@
             <li>无志愿者线上接单调度体系，仅提供设备点位查看</li>
             <li>紧急呼救无长按防误触逻辑，误报率高</li>
             <li>健康急救隐私权限划分模糊，缺少分级授权机制</li>
+          </ul>
+        </div>
+        <div class="competitor-card advantage">
+          <h4>本项目差异化机会点</h4>
+          <ul>
+            <li>一键切换老年大字高对比模式，全页面遵循无障碍标准</li>
+            <li>SOS 长按脉冲交互，3 秒长按触发呼救，杜绝误触</li>
+            <li>居民 - 志愿者 - 管理员三端角色区分，独立操作后台</li>
+            <li>医疗健康数据脱敏展示，紧急场景临时解锁隐私信息</li>
           </ul>
         </div>
       </div>
@@ -4186,7 +4143,6 @@
         </div>
       </div>
     </section>
-      </div>
 
 <!-- Panel 2: 问题定义与拆解 -->
       <div class="process-panel" id="processPanel1">
@@ -4342,7 +4298,7 @@
     <!-- ===== 板块4：信息架构设计 ===== -->
     <section class="section" id="information-architecture">
       <div class="section-header">
-        <div class="section-number">环节 03</div>
+        <div class="section-number">环节 04</div>
         <h2 class="section-title">信息架构设计</h2>
         <p class="section-desc">从功能模块切分到空间逻辑导航，引入地理邻近性与用户角色作为导航维度，建立健康数据中心作为跨模块数据总线。</p>
       </div>
@@ -4395,7 +4351,7 @@
       <div class="process-panel" id="processPanel3">
         <section class="section" id="production">
           <div class="section-header">
-            <div class="section-number">环节 04</div>
+            <div class="section-number">环节 05</div>
             <h2 class="section-title">开始制作 — 低保真到高保真</h2>
             <p class="section-desc" style="margin:0 auto;">从灰度低保真原型到线框图再到初稿高保真，展示设计从概念结构到视觉落地的完整制作过程。</p>
           </div>
@@ -4481,7 +4437,7 @@
       <div class="process-panel" id="processPanel4">
         <section class="section" id="prototype">
           <div class="section-header">
-            <div class="section-number">环节 05</div>
+            <div class="section-number">环节 06</div>
             <h2 class="section-title">案例原型 — 社区医疗急救完整版</h2>
             <p class="section-desc" style="margin:0 auto;">最终落地的高保真界面设计，覆盖C端居民急救与B端志愿者管理双端全场景页面。支持交互操作，可点击查看各页面流程。</p>
           </div>
@@ -4759,42 +4715,81 @@
     </script>
       </div>
 
-<!-- Panel 7: 设计决策日志 -->
+<!-- Panel 3: 设计决策 -->
       <div class="process-panel" id="processPanel6">
-    <!-- ===== 板块10：设计决策日志 ===== -->
+    <!-- ===== 设计决策：差异化策略与决策日志 ===== -->
     <section class="section" id="decision-log">
       <div class="section-header">
-        <div class="section-number">环节 08</div>
-        <h2 class="section-title">设计决策日志</h2>
-        <p class="section-desc">从业务差异化亮点到关键设计决策记录，系统化呈现产品设计思维链条与决策依据。</p>
+        <div class="section-number">环节 03</div>
+        <h2 class="section-title">设计决策 — 差异化策略与决策日志</h2>
+        <p class="section-desc">以完整急救业务闭环为骨架，以差异化设计策略为灵魂，将分散的设计决策点整合为可追溯的决策日志。</p>
       </div>
 
-      <h3 class="sub-heading" style="margin-top:0;">业务差异化与亮点</h3>
-      <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;margin-bottom:0.5rem;">基于竞品分析发现的共性缺陷，本项目在设计决策中确立了以下四大差异化方向，形成独特的产品竞争力。</p>
-      <div class="highlight-grid">
-        <div class="highlight-card">
-          <div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M19 13v-2a7 7 0 0 0-14 0v2"/><path d="M12 13v4"/><path d="M9 21l3-4 3 4"/></svg></div>
-          <div class="hl-title">适老化无障碍标准</div>
-          <div class="hl-desc">一键切换老年大字高对比模式，全页面遵循 WCAG 无障碍标准，覆盖视障、色弱人群</div>
+      <h3 class="sub-heading" style="margin-top:0;">完整急救业务流程</h3>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <div class="step-num">步骤 01</div>
+          <div class="step-text">居民身体不适<br>感觉异常</div>
         </div>
-        <div class="highlight-card">
-          <div class="hl-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/></svg></div>
-          <div class="hl-title">SOS 长按防误触交互</div>
-          <div class="hl-desc">3 秒长按脉冲触发呼救，杜绝误触误报，提供触觉反馈确认机制</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon" style="background:var(--accent);color:#fff;border-color:var(--accent);"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+          <div class="step-num">步骤 02</div>
+          <div class="step-text">长按SOS<br>一键发送求助</div>
         </div>
-        <div class="highlight-card">
-          <div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <div class="hl-title">三端角色独立后台</div>
-          <div class="hl-desc">居民 - 志愿者 - 管理员三端角色区分，各自独立操作后台，业务闭环联动</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <div class="step-num">步骤 03</div>
+          <div class="step-text">系统推送<br>志愿者通知</div>
         </div>
-        <div class="highlight-card">
-          <div class="hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5 3.5 9 9 11 5.5-2 9-6 9-11V7l-9-5z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <div class="hl-title">医疗数据分级脱敏</div>
-          <div class="hl-desc">健康数据脱敏展示，紧急场景临时解锁隐私信息，兼顾安全与效率</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="step-num">步骤 04</div>
+          <div class="step-text">展示周边<br>AED与医疗机构</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+          <div class="step-num">步骤 05</div>
+          <div class="step-text">志愿者后台<br>接单处理</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="step-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h2l1-7h7l3 4h4"/><path d="M3 17a2 2 0 0 0 4 0"/><path d="M15 17a2 2 0 0 0 4 0"/><rect x="5" y="10" width="8" height="3"/><path d="M12 7h2"/></svg></div>
+          <div class="step-num">步骤 06</div>
+          <div class="step-text">120急救转运<br>送医治疗</div>
         </div>
       </div>
 
-      <h3 class="sub-heading">关键设计决策记录</h3>
+      <div class="img-showcase" style="margin-top:1.5rem;">
+        <img src="assets/flowchart-process.jpg" alt="急救业务流程图">
+      </div>
+      <p class="img-caption">急救业务全链路：从居民感知不适、志愿者响应施救，到120急救转运送医治疗的完整闭环</p>
+
+      <h3 class="sub-heading" style="margin-top:2.5rem;">项目差异化亮点</h3>
+      <p style="font-size:0.92rem;color:var(--ink2);line-height:1.85;margin-bottom:0.5rem;">以下六大差异化策略贯穿全产品设计过程，是本项目区别于市面同类急救产品的核心竞争力。</p>
+      <div class="bullet-bar">
+        <div class="bullet-track">
+          <span class="bullet-item"><span class="b-dot"></span>急救专属语义色彩 — 低饱和红色传递紧急感但不制造恐慌</span>
+          <span class="bullet-item"><span class="b-dot"></span>全套标准化组件库 — 17个页面统一调用，降低设计复用成本</span>
+          <span class="bullet-item"><span class="b-dot"></span>无障碍适老化标准 — 高对比、大控件、弱化动效</span>
+          <span class="bullet-item"><span class="b-dot"></span>长按防误触SOS交互 — 3秒长按触发，避免误触误报</span>
+          <span class="bullet-item"><span class="b-dot"></span>双端完整业务闭环 — 居民呼救与志愿者调度联动</span>
+          <span class="bullet-item"><span class="b-dot"></span>急救知识快速指引 — CPR/AED/海姆立克等场景教程</span>
+          <span class="bullet-item"><span class="b-dot"></span>急救专属语义色彩 — 低饱和红色传递紧急感但不制造恐慌</span>
+          <span class="bullet-item"><span class="b-dot"></span>全套标准化组件库 — 17个页面统一调用，降低设计复用成本</span>
+          <span class="bullet-item"><span class="b-dot"></span>无障碍适老化标准 — 高对比、大控件、弱化动效</span>
+          <span class="bullet-item"><span class="b-dot"></span>长按防误触SOS交互 — 3秒长按触发，避免误触误报</span>
+          <span class="bullet-item"><span class="b-dot"></span>双端完整业务闭环 — 居民呼救与志愿者调度联动</span>
+          <span class="bullet-item"><span class="b-dot"></span>急救知识快速指引 — CPR/AED/海姆立克等场景教程</span>
+        </div>
+      </div>
+
+      <h3 class="sub-heading" style="margin-top:2.5rem;">关键设计决策记录</h3>
       <div class="decision-log-grid">
         <div class="decision-card">
           <div class="dc-stage">问题定义阶段</div>

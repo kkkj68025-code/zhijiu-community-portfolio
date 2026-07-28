@@ -2741,6 +2741,100 @@
 
     }
 
+    /* ===== iPhone 样机外框 ===== */
+    .iphone-mockup {
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    .iphone-frame {
+      position: relative;
+      width: 393px;
+      max-width: 100%;
+      padding: 14px;
+      background: linear-gradient(160deg, #d1d5db 0%, #9ca3af 40%, #6b7280 100%);
+      border-radius: 54px;
+      box-shadow:
+        0 0 0 1px rgba(0,0,0,0.08),
+        0 2px 4px rgba(0,0,0,0.04),
+        0 8px 16px rgba(0,0,0,0.06),
+        0 24px 48px rgba(0,0,0,0.12),
+        inset 0 1px 2px rgba(255,255,255,0.25),
+        inset 0 -1px 2px rgba(0,0,0,0.08);
+    }
+    .iphone-frame::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: -3px;
+      width: 3px;
+      height: 28px;
+      background: linear-gradient(180deg, #b0b5bd, #8e939b);
+      border-radius: 2px 0 0 2px;
+      z-index: 2;
+    }
+    .iphone-frame::after {
+      content: '';
+      position: absolute;
+      top: 64px;
+      left: -3px;
+      width: 3px;
+      height: 56px;
+      background: linear-gradient(180deg, #b0b5bd, #8e939b);
+      border-radius: 2px 0 0 2px;
+      z-index: 2;
+    }
+    .iphone-notch {
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 30px;
+      background: #0a0a0a;
+      border-radius: 18px;
+      z-index: 10;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.08);
+    }
+    .iphone-screen {
+      position: relative;
+      width: 100%;
+      border-radius: 42px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: inset 0 0 0 2px rgba(0,0,0,0.6);
+    }
+    .iphone-screen .case-figma-wrapper.compact {
+      max-width: none;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      aspect-ratio: 393 / 852;
+    }
+    .iphone-screen .case-figma-fallback {
+      border-radius: 0;
+      aspect-ratio: 393 / 852;
+    }
+    @media (max-width: 480px) {
+      .iphone-frame {
+        width: 100%;
+        padding: 10px;
+        border-radius: 40px;
+      }
+      .iphone-frame::before,
+      .iphone-frame::after {
+        display: none;
+      }
+      .iphone-notch {
+        width: 80px;
+        height: 24px;
+        top: 16px;
+      }
+      .iphone-screen {
+        border-radius: 32px;
+      }
+    }
+
     /* ===== FOOTER ===== */
     .portfolio-footer {
       text-align: center;
@@ -6049,10 +6143,14 @@ interface EmptyStateProps {
               </div>
             </div>
             <div class="case-screenshots">
-              <div class="case-figma-wrapper compact" id="caseGreenMateWrapper">
-                <iframe class="case-figma-frame" id="caseGreenMateFrame" src="https://drone-both-87100295.figma.site" title="绿伴 GreenMate 植物养护助手原型" loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-              </div>
-              <div class="case-figma-fallback" id="caseGreenMateFallback">
+              <div class="iphone-mockup">
+                <div class="iphone-frame">
+                  <div class="iphone-notch"></div>
+                  <div class="iphone-screen">
+                    <div class="case-figma-wrapper compact" id="caseGreenMateWrapper">
+                      <iframe class="case-figma-frame" id="caseGreenMateFrame" src="https://drone-both-87100295.figma.site" title="绿伴 GreenMate 植物养护助手原型" loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                    </div>
+                    <div class="case-figma-fallback" id="caseGreenMateFallback">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5"><path d="M12 2a9 9 0 0 0-9 9c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9z"/><path d="M12 7v10"/><path d="M8 11l4-4 4 4"/></svg>
                 <p>原型加载中，请稍候…</p>
                 <div class="case-figma-actions">
@@ -6064,6 +6162,9 @@ interface EmptyStateProps {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                     新窗口打开
                   </a>
+                </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="case-carousel-label">绿伴 GreenMate · 可交互原型</div>
